@@ -1,5 +1,5 @@
 ## *Hola Mundo* 👋
-# Aquí subiremos actualizaciones **stable** y *beta* del proyecto CanSat 2025
+### Aquí subiremos actualizaciones **stable** y *beta* del proyecto CanSat 2025
 <!--
 **CompaSat/CompaSat** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
