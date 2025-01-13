@@ -5,6 +5,7 @@ Características actuales del programa:
 - Medición con BMP280 de la temperatura, presión y altitud
 - Guardado de datos en tarjeta SD
 - Emisión de datos por radio
+- Obtención de coordenadas por GPS
 ## Python
 Características actuales del programa:
 - Recepción de datos emitidos por el arduino
