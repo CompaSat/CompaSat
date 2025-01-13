@@ -1,14 +1,10 @@
-// CANSAT 2024
-//  V01: SENSOR BMP280
-//  V02: SENSOR BMP280 + BALIZA
-
 /* 1. LIBRERÍAS */
 #include <Wire.h>
 #include <SPI.h>
 #include <Adafruit_BMP280.h>
 
 
-/* 2. DEFINICIÓN CONSTANTES E VARIABLES */
+/* 2. DEFINICIÓN CONSTANTES Y VARIABLES */
 
 // Sensor BMP280
 Adafruit_BMP280 bmp; // I2C
@@ -42,12 +38,12 @@ void setup() {
   }
 
   // Sensor BMP
-  /* Default settings from datasheet. */
-  bmp.setSampling(Adafruit_BMP280::MODE_NORMAL,     /* Operating Mode. */
-                  Adafruit_BMP280::SAMPLING_X2,     /* Temp. oversampling */
-                  Adafruit_BMP280::SAMPLING_X16,    /* Pressure oversampling */
-                  Adafruit_BMP280::FILTER_X16,      /* Filtering. */
-                  Adafruit_BMP280::STANDBY_MS_500); /* Standby time. */
+  /* Opciones por defecto. */
+  bmp.setSampling(Adafruit_BMP280::MODE_NORMAL,
+                  Adafruit_BMP280::SAMPLING_X2,
+                  Adafruit_BMP280::SAMPLING_X16,
+                  Adafruit_BMP280::FILTER_X16,
+                  Adafruit_BMP280::STANDBY_MS_500);
 }
 
 /* 4. LOOP */
@@ -60,7 +56,7 @@ void loop() {
   Serial.print(bmp.readPressure());
   Serial.print(", ");
   Serial.print(bmp.readAltitude(1053.25));
-  Serial.println(); /* Adjusted to local forecast! */
+  Serial.println();
   idPaquete = idPaquete + 1;
   digitalWrite(pinLed, LOW);
   delay(1000);
