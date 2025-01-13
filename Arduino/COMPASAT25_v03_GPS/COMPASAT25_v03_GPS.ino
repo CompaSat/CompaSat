@@ -1,7 +1,7 @@
 #include <Wire.h>
 #include <Adafruit_BMP280.h>
 #include <SPI.h>
-#include <SdFat.h>
+#include <SdFat.h> // Incluir la biblioteca SdFat
 #include <TinyGPS++.h>
 #include <AltSoftSerial.h>
 
@@ -18,8 +18,8 @@ int pinLed = 7; // Pin del LED indicador
 int idPaquete = 1; // Contador de paquetes
 
 // Configuración para GPS
-AltSoftSerial altSerial;
-TinyGPSPlus gps;
+AltSoftSerial altSerial; // Crear objeto AltSoftSerial
+TinyGPSPlus gps; // Objeto de la librería TinyGPS++
 
 void setup() {
   // Inicialización del puerto serie
@@ -81,7 +81,8 @@ void loop() {
   Serial.print(altitud); Serial.print(",");
   Serial.print(latitud, 6); Serial.print(",");
   Serial.print(longitud, 6); Serial.print(",");
-  Serial.println(satelites);
+  Serial.print(satelites); Serial.print(",");
+  Serial.println("COMPASAT25");
 
   // Escribir datos en la SD utilizando SdFat
   if (logFile.open("COMPASAT.txt", O_WRITE | O_APPEND)) {
@@ -91,7 +92,8 @@ void loop() {
     logFile.print(altitud); logFile.print(",");
     logFile.print(latitud, 6); logFile.print(",");
     logFile.print(longitud, 6); logFile.print(",");
-    logFile.println(satelites);
+    logFile.print(satelites); logFile.print(",");
+    logFile.println("COMPASAT25");
     logFile.close();
   } else {
     Serial.println("Error al escribir en la SD.");
