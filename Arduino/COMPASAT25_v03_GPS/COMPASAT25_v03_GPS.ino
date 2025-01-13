@@ -1,7 +1,7 @@
 #include <Wire.h>
 #include <Adafruit_BMP280.h>
 #include <SPI.h>
-#include <SdFat.h> // Incluir la biblioteca SdFat
+#include <SdFat.h>
 #include <TinyGPS++.h>
 #include <AltSoftSerial.h>
 
@@ -18,8 +18,8 @@ int pinLed = 7; // Pin del LED indicador
 int idPaquete = 1; // Contador de paquetes
 
 // Configuración para GPS
-AltSoftSerial altSerial; // Crear objeto AltSoftSerial
-TinyGPSPlus gps; // Objeto de la librería TinyGPS++
+AltSoftSerial altSerial;
+TinyGPSPlus gps;
 
 void setup() {
   // Inicialización del puerto serie
