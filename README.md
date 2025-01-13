@@ -11,3 +11,4 @@ Características actuales del programa:
 - Recepción de datos emitidos por el arduino
 - Guardado de datos en un archivo txt
 - Creación de una gráfica con los datos recibidos (y guardado en png de la gráfica)
+- Creación de un mapa mediante html (http://127.0.0.1:5000) y señalización del cansat en tiempo real junto con una linea representando su trayectoria
