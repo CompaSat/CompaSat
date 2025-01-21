@@ -1,14 +1,14 @@
-# PROYECTO COMPASAT25 - Colegio Compañía de María, A Coruña
+# PROXECTO COMPASAT25 - Colexio Compañía de María, A Coruña
 
 ## Arduino
-Características actuales del programa:
-- Medición con BMP280 de la temperatura, presión y altitud
-- Guardado de datos en tarjeta SD
+Características actuais do programa:
+- Medición con BMP280 da temperatura, presión e altitude
+- Gardado de datos en tarxeta SD
 - Emisión de datos por radio
 - Obtención de coordenadas por GPS
 ## Python
-Características actuales del programa:
-- Recepción de datos emitidos por el arduino
-- Guardado de datos en un archivo txt
-- Creación de una gráfica con los datos recibidos (y guardado en png de la gráfica)
-- Creación de un mapa mediante html (http://127.0.0.1:5000) y señalización del cansat en tiempo real junto con una linea representando su trayectoria
+Características actuais do programa:
+- Recepción de datos emitidos polo arduino
+- Gardado de datos nun ficheiro txt
+- Creación dunha gráfica cos datos recibidos (e gardado en png da gráfica)
+- Creación dun mapa mediante html (http://127.0.0.1:5000) e sinalización do cansat en tempo real xunto cunha liña representando a súa traxectoria
