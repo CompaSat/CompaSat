@@ -2,8 +2,8 @@ int idPaquete = 1; // Contador de paquetes
 // Configuración del motor paso a paso
 const int motorPin1 = 3;
 const int motorPin2 = 4;
-const int motorPin3 = 5;
-const int motorPin4 = 6;
+const int motorPin3 = 6;
+const int motorPin4 = 7;
 int motorSpeed = 1000;
 int stepCounter = 0;
 int stepsPerRev = 4076;
