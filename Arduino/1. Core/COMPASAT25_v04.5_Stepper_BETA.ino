@@ -14,7 +14,7 @@ SdFile logFile;
 const int chipSelect = 10; // Pin CS de la tarjeta SD
 
 // Configuración de LED
-int pinLed = 7; // Pin del LED indicador
+int pinLed = 5; // Pin del LED indicador
 int idPaquete = 1; // Contador de paquetes
 
 // Configuración para GPS
@@ -24,8 +24,8 @@ TinyGPSPlus gps; // Objeto de la librería TinyGPS++
 // Configuración del motor paso a paso
 const int motorPin1 = 3;
 const int motorPin2 = 4;
-const int motorPin3 = 5;
-const int motorPin4 = 6;
+const int motorPin3 = 6;
+const int motorPin4 = 7;
 int motorSpeed = 1000;
 int stepCounter = 0;
 int stepsPerRev = 4076;
