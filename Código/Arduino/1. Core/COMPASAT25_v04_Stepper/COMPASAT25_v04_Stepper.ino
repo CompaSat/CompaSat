@@ -1,7 +1,7 @@
 #include <Wire.h>
 #include <Adafruit_BMP280.h>
 #include <SPI.h>
-#include <SdFat.h> // Incluir la biblioteca SdFat
+#include <SdFat.h>
 #include <TinyGPS++.h>
 #include <AltSoftSerial.h>
 
@@ -26,7 +26,7 @@ const int motorPin1 = 3;
 const int motorPin2 = 4;
 const int motorPin3 = 6;
 const int motorPin4 = 7;
-int motorSpeed = 1200;
+int motorSpeed = 1000;
 int stepCounter = 0;
 int stepsPerRev = 4076;
 int stepsPer90 = stepsPerRev / 4;
@@ -71,7 +71,7 @@ void setup() {
   // Configuración del LED
   pinMode(pinLed, OUTPUT);
 
-  Serial.println("Sistema inicializado correctamente.");
+  Serial.println(F("Sistema inicializado correctamente."));
 }
 
 void loop() {
@@ -81,9 +81,10 @@ void loop() {
   float altitud = bmp.readAltitude(1013.25); // Ajusta según la presión a nivel del mar
 
   // Leer datos del GPS
-  while (altSerial.available() > 0) {
-    char c = altSerial.read();
-    gps.encode(c);
+  unsigned long start = millis();
+  while (altSerial.available() > 0 && millis() - start < 100) { // Timeout after 100ms
+      char c = altSerial.read();
+      gps.encode(c);
   }
 
   float latitud = gps.location.isValid() ? gps.location.lat() : NAN;
