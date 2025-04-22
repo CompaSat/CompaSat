@@ -1,11 +1,13 @@
 # PROXECTO COMPASAT25 - Colexio Compañía de María, A Coruña
 
 ## Arduino
-Características actuais do programa:
+__Características actuais do programa:__
 - Medición con BMP280 da temperatura, presión e altitude
 - Gardado de datos en tarxeta SD
 - Emisión de datos por radio
 - Obtención de coordenadas por GPS
+- Medición de cantidade de CO2
+- Control do motor para abrir e pechar o compartimento para a misión biolóxica
 ## Python
 Características actuais do programa:
 - Recepción de datos emitidos polo arduino
