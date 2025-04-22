@@ -19,8 +19,8 @@ int pinLed = 5; // Pin del LED indicador
 int idPaquete = 1; // Contador de paquetes
 
 // GPS
-AltSoftSerial altSerial; // Crear objeto AltSoftSerial
-TinyGPSPlus gps; // Objeto de la librería TinyGPS++
+AltSoftSerial altSerial;
+TinyGPSPlus gps;
 
 // MOTOR
 const int motorPin1 = 3;
@@ -41,9 +41,9 @@ bool motorAbierto = false;
 // CO2
 #define MG_PIN               A0
 #define DC_GAIN              8.5
-#define ZERO_POINT_VOLTAGE   (0.246) // 2.09 / 8.5
-#define REACTION_VOLTGAE     (0.030)
-float CO2Curve[3] = {2.602, ZERO_POINT_VOLTAGE, (REACTION_VOLTGAE / (2.602 - 3))};
+#define ZERO_POINT_VOLTAGE   (0.246) // 2.09 (calibrado) / 8.5
+#define REACTION_VOLTAGE     (0.030)
+float CO2Curve[3] = {2.602, ZERO_POINT_VOLTAGE, (REACTION_VOLTAGE / (2.602 - 3))};
 
 void setup() {
   Serial.begin(9600);
@@ -91,7 +91,7 @@ void loop() {
   // BMP280
   float temperatura = bmp.readTemperature();
   float presion = bmp.readPressure();
-  float altitud = bmp.readAltitude(1013.25); // Ajustar según la presión a nivel del mar
+  float altitud = bmp.readAltitude(presionAlNivelDelMar); // Ajustar según la presión a nivel del mar
 
   // Motor
     // Guardados de altura
